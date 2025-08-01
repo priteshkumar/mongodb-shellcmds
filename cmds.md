@@ -23,3 +23,7 @@
 > ```db.temp.find({property_type:"Apartment"}).count()``` --> counts the number of documents having property_type = "Apartment"
 
 > ```db.temp.find({},{name:1,listing_url:1,minimum_nights:1}).sort({minimum_nights:-1}).limit(10)```  --> sorts in desc order based on minimum_nights
+
+> ```db.temp.updateOne({_id:'10006546'},{$set:{minimum_nights:'4'}})``` --> updates document with id , setting minimum_nights to 4
+
+> ```db.temp.find({minimum_nights:{$ne:'2'}},{listing_url:1,minimum_nights:1}).limit(10)``` --> finds the documents where minimum_nights != 2
