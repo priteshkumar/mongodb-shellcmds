@@ -31,3 +31,7 @@
 > ```db.temp.find({$and:[{beds:{$gte:15}},{beds:{$lte:26}}]},{listing_url:1,name:1,beds:1}).sort({beds:-1})``` ---> finds documents with beds >= 15 and beds <= 26
 
 > ```db.temp.distinct('property_type')``` --> finds the distinct values for property_type field
+
+### Aggregation cmds
+
+> ```db.temp.aggregate([{$group:{_id:"$property_type",numOfproperties:{$sum:1}}}])``` --> finds the num of properties for each property_type
