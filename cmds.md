@@ -27,3 +27,7 @@
 > ```db.temp.updateOne({_id:'10006546'},{$set:{minimum_nights:'4'}})``` --> updates document with id , setting minimum_nights to 4
 
 > ```db.temp.find({minimum_nights:{$ne:'2'}},{listing_url:1,minimum_nights:1}).limit(10)``` --> finds the documents where minimum_nights != 2
+
+> ```db.temp.find({$and:[{beds:{$gte:15}},{beds:{$lte:26}}]},{listing_url:1,name:1,beds:1}).sort({beds:-1})``` ---> finds documents with beds >= 15 and beds <= 26
+
+> ```db.temp.distinct('property_type')``` --> finds the distinct values for property_type field
