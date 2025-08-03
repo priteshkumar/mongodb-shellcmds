@@ -35,3 +35,9 @@
 ### Aggregation cmds
 
 > ```db.temp.aggregate([{$group:{_id:"$property_type",numOfproperties:{$sum:1}}}])``` --> finds the num of properties for each property_type
+
+### Indexing
+
+>  ```db.weather_data.find({type:"SAO"}).explain("executionStats")``` --> tells the execution stats
+
+> ```db.weather_data.createIndex({elevation:1})``` --> creates index on elevation field 
